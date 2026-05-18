@@ -1,0 +1,130 @@
+.camera-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: 24px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.camera-modal {
+  background: #0F1117;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.camera-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.camera-modal__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.camera-modal__close {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s, color 0.15s;
+}
+.camera-modal__close:hover {
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+}
+
+/* ─── Viewfinder ──────────────────────────────── */
+.camera-viewfinder {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+/* El contenedor de html5-qrcode ocupa todo el ancho */
+#camera-scanner-container {
+  width: 100%;
+}
+
+#camera-scanner-container video {
+  width: 100% !important;
+  display: block;
+}
+
+/* Ocultar los controles que inserta html5-qrcode */
+#camera-scanner-container > div:last-child {
+  display: none !important;
+}
+
+/* Esquinas decorativas del viewfinder */
+.camera-viewfinder__corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #4F46E5;
+  border-style: solid;
+}
+.corner--tl { top: 20px; left: 20px; border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+.corner--tr { top: 20px; right: 20px; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+.corner--bl { bottom: 20px; left: 20px; border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+.corner--br { bottom: 20px; right: 20px; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
+
+.camera-hint {
+  padding: 14px 20px;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+/* ─── Error ───────────────────────────────────── */
+.camera-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}

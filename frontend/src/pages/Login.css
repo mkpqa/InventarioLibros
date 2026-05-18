@@ -1,0 +1,332 @@
+/* ═══════════════════════════════════════════════════════════════
+   Login.css — LibroStock Design System (Precision Minimalism)
+   Fuente: Geist | Color primario: #4F46E5 | BG: #F8F9FA
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+
+/* ── Variables del Design System ────────────────────────────── */
+:root {
+  --color-primary:            #4F46E5;
+  --color-primary-hover:      #3525CD;
+  --color-primary-focus-ring: rgba(79, 70, 229, 0.25);
+  --color-sidebar-bg:         #0F1117;
+  --color-surface:            #F8F9FA;
+  --color-surface-white:      #FFFFFF;
+  --color-on-surface:         #191C1D;
+  --color-on-surface-muted:   #464555;
+  --color-outline:            #D1D5DB;
+  --color-error:              #BA1A1A;
+  --color-error-bg:           #FFF1F0;
+  --color-success:            #16A34A;
+  --color-amber:              #D97706;
+  --radius-md:                0.5rem;
+  --radius-lg:                0.75rem;
+  --font-family:              'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ── Reset mínimo ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-family); }
+
+/* ── Layout principal ────────────────────────────────────────── */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-surface);
+}
+
+/* ── Panel izquierdo (oscuro) ────────────────────────────────── */
+.login-left-panel {
+  width: 45%;
+  background: var(--color-sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradiente decorativo sutil */
+.login-left-panel::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: auto;
+}
+
+.login-brand-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.login-left-content {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.login-headline {
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.login-subheadline {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.login-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.feature-dot--green  { background: #22C55E; }
+.feature-dot--indigo { background: #818CF8; }
+.feature-dot--amber  { background: #FBBF24; }
+
+/* ── Panel derecho (formulario) ──────────────────────────────── */
+.login-right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  background: var(--color-surface-white);
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form-header {
+  margin-bottom: 36px;
+}
+
+.login-form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.login-form-subtitle {
+  font-size: 14px;
+  color: var(--color-on-surface-muted);
+  line-height: 20px;
+}
+
+/* ── Formulario ──────────────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-on-surface);
+  letter-spacing: 0;
+}
+
+.form-input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-on-surface);
+  background: var(--color-surface-white);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder { color: #9CA3AF; }
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-focus-ring);
+}
+
+.form-input--error {
+  border-color: var(--color-error);
+}
+
+.form-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.15);
+}
+
+.form-input:disabled {
+  background: var(--color-surface);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ── Mensaje de error ────────────────────────────────────────── */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--color-error-bg);
+  border: 1px solid rgba(186, 26, 26, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-error);
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+/* ── Botón principal ─────────────────────────────────────────── */
+.btn-login {
+  height: 42px;
+  padding: 0 20px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  margin-top: 4px;
+}
+
+.btn-login:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-login:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Spinner del botón ───────────────────────────────────────── */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Nota al pie ─────────────────────────────────────────────── */
+.login-footer-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #9CA3AF;
+  text-align: center;
+  line-height: 18px;
+}
+
+/* ── Spinner de carga del contexto ───────────────────────────── */
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(79, 70, 229, 0.2);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .login-left-panel { display: none; }
+
+  .login-right-panel {
+    padding: 32px 24px;
+    background: var(--color-surface);
+  }
+
+  /* Logo compacto en móvil */
+  .login-right-panel::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: var(--color-sidebar-bg);
+    z-index: 0;
+  }
+
+  .login-form-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: 32px;
+  }
+}

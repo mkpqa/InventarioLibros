@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+.dashboard { font-family: 'Geist', sans-serif; max-width: 900px; }
+
+/* ── Cabecera ─────────────────────────────── */
+.dash-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 28px; gap: 16px; flex-wrap: wrap;
+}
+
+/* Selector de periodo */
+.periodo-selector {
+  display: inline-flex; background: #F3F4F6; border: 1px solid #E5E7EB;
+  border-radius: 8px; padding: 3px; gap: 2px;
+}
+.periodo-btn {
+  padding: 6px 16px; border: none; border-radius: 6px; background: transparent;
+  font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500;
+  color: #6B7280; cursor: pointer; transition: background .15s, color .15s;
+}
+.periodo-btn--active {
+  background: #FFF; color: #191C1D; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+/* ── Carga/Error ──────────────────────────── */
+.dash-loading, .dash-error {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 72px 24px; font-size: 14px; color: #9CA3AF;
+  background: #FFF; border: 1px solid #E5E7EB; border-radius: 12px;
+}
+.dash-error { color: #BA1A1A; }
+.loading-spinner {
+  width: 24px; height: 24px; border: 2.5px solid rgba(79,70,229,.2);
+  border-top-color: #4F46E5; border-radius: 50%; animation: spin .65s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Métricas ─────────────────────────────── */
+.metric-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-bottom: 24px;
+}
+
+.metric-card {
+  background: #FFF; border: 1px solid #E5E7EB; border-radius: 12px;
+  padding: 22px 20px; display: flex; align-items: flex-start; gap: 16px;
+  transition: box-shadow .2s;
+}
+.metric-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); }
+
+.metric-card__icon {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.metric-card__icon--blue   { background: #EEF2FF; color: #4F46E5; }
+.metric-card__icon--green  { background: #F0FDF4; color: #16A34A; }
+.metric-card__icon--red    { background: #FFF1F0; color: #DC2626; }
+
+.metric-card__body {
+  display: flex; flex-direction: column; gap: 3px;
+}
+.metric-card__label {
+  font-size: 12px; font-weight: 500; color: #9CA3AF; text-transform: uppercase; letter-spacing: .04em;
+}
+.metric-card__value {
+  font-size: 28px; font-weight: 700; color: #191C1D; line-height: 1.1; letter-spacing: -.02em;
+}
+.metric-card__value--green { color: #16A34A; }
+.metric-card__value--red   { color: #DC2626; }
+.metric-card__sub          { font-size: 12px; color: #9CA3AF; }
+
+/* ── Libros críticos ──────────────────────── */
+.criticos-card {
+  background: #FFF; border: 1px solid #E5E7EB; border-radius: 12px;
+  padding: 20px 24px; margin-bottom: 24px;
+}
+.criticos-card__header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+}
+.criticos-card__title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: #191C1D;
+}
+.btn-link {
+  border: none; background: transparent; color: #4F46E5; font-family: 'Geist', sans-serif;
+  font-size: 13px; font-weight: 500; cursor: pointer; padding: 0;
+  transition: opacity .15s;
+}
+.btn-link:hover { opacity: .75; }
+
+.criticos-empty {
+  font-size: 14px; color: #16A34A; text-align: center; padding: 20px 0;
+}
+
+.criticos-list { display: flex; flex-direction: column; gap: 2px; }
+
+.critico-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid #F3F4F6;
+}
+.critico-item:last-child { border-bottom: none; }
+
+.critico-item__avatar {
+  width: 36px; height: 36px; border-radius: 6px; background: #EEF2FF;
+  flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.critico-item__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.critico-item__titulo {
+  flex: 1; font-size: 14px; font-weight: 500; color: #191C1D;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ── Accesos rápidos ──────────────────────── */
+.quick-actions { }
+.quick-actions__title {
+  font-size: 14px; font-weight: 600; color: #191C1D; margin-bottom: 14px;
+}
+.quick-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.quick-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  padding: 20px 12px; border: none; border-radius: 10px; cursor: pointer;
+  font-family: 'Geist', sans-serif; transition: transform .15s, box-shadow .15s;
+}
+.quick-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+.quick-card__icon { font-size: 22px; }
+.quick-card__label { font-size: 13px; font-weight: 500; }
+
+.quick-card--green { background: #F0FDF4; color: #16A34A; }
+.quick-card--red   { background: #FFF1F0; color: #DC2626; }
+.quick-card--blue  { background: #EEF2FF; color: #4F46E5; }
+.quick-card--gray  { background: #F9FAFB; color: #6B7280; border: 1px solid #E5E7EB; }
+
+/* ── Reutilizables ────────────────────────── */
+.page-title    { font-size: 24px; font-weight: 600; color: #191C1D; letter-spacing: -.01em; }
+.page-subtitle { font-size: 13px; color: #9CA3AF; margin-top: 4px; }
+.btn-outline {
+  padding: 8px 20px; background: transparent; border: 1px solid #E5E7EB;
+  border-radius: 8px; font-family: 'Geist', sans-serif; font-size: 14px;
+  color: #191C1D; cursor: pointer; transition: background .15s;
+}
+.btn-outline:hover { background: #F3F4F6; }
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .metric-grid  { grid-template-columns: 1fr; }
+  .quick-grid   { grid-template-columns: repeat(2, 1fr); }
+  .dash-header  { flex-direction: column; }
+}

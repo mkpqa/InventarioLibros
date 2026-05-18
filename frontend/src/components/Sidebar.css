@@ -1,0 +1,99 @@
+.sidebar {
+  position: fixed;
+  top: 56px;      /* altura de la Navbar */
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  background: #0F1117;  /* Dark Navy del Design System */
+  display: flex;
+  flex-direction: column;
+  z-index: 90;
+  overflow-y: auto;
+  transition: transform 0.25s ease, background 0.3s;
+}
+
+/* Modo oscuro: revertimos la inversión y aplicamos verde oscuro */
+html.dark .sidebar {
+  filter: invert(1) hue-rotate(180deg);
+  background: #064E3B; /* Verde oscuro (Emerald 900) */
+}
+
+.sidebar__nav {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+}
+
+.sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Estado activo — tint + línea índigo izquierda */
+.sidebar__link--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.sidebar__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: #4F46E5;
+  border-radius: 0 2px 2px 0;
+}
+
+.sidebar__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.sidebar__link--active .sidebar__icon {
+  opacity: 1;
+  color: #818CF8;
+}
+
+.sidebar__label {
+  white-space: nowrap;
+}
+
+/* Overlay móvil */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 89;
+}
+
+/* Responsive — ocultar en móvil, mostrar con clase --open */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+}

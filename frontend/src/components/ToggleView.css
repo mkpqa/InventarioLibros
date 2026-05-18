@@ -1,0 +1,36 @@
+.toggle-view {
+  display: inline-flex;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.toggle-view__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.toggle-view__btn:hover {
+  background: #FFFFFF;
+  color: #191C1D;
+}
+
+.toggle-view__btn--active {
+  background: #FFFFFF;
+  color: #4F46E5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}

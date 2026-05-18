@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Libro Inferior (Azul) -->
+  <path d="M4 22 L16 27 L28 22 L16 17 Z" fill="#0EA5E9" />
+  <path d="M4 22 V26 L16 31 V27 Z" fill="#0284C7" />
+  <path d="M28 22 V26 L16 31 V27 Z" fill="#E2E8F0" />
+  
+  <!-- Libro Medio (Rojo) -->
+  <path d="M4 16 L16 21 L28 16 L16 11 Z" fill="#EF4444" />
+  <path d="M4 16 V20 L16 25 V21 Z" fill="#B91C1C" />
+  <path d="M28 16 V20 L16 25 V21 Z" fill="#F1F5F9" />
+  
+  <!-- Libro Superior (Verde) -->
+  <path d="M4 10 L16 15 L28 10 L16 5 Z" fill="#22C55E" />
+  <path d="M4 10 V14 L16 19 V15 Z" fill="#15803D" />
+  <path d="M28 10 V14 L16 19 V15 Z" fill="#F8FAFC" />
+</svg>

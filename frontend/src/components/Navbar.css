@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  font-family: 'Geist', sans-serif;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #6B7280;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar__menu-btn:hover {
+  background: #F3F4F6;
+  color: #191C1D;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191C1D;
+  letter-spacing: -0.01em;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__user-avatar {
+  width: 32px;
+  height: 32px;
+  background: #EEF2FF;
+  color: #4F46E5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.navbar__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.navbar__user-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #191C1D;
+  line-height: 1.2;
+}
+
+.navbar__user-role {
+  font-size: 11px;
+  color: #9CA3AF;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.navbar__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E5E7EB;
+  background: transparent;
+  color: #6B7280;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.navbar__logout:hover {
+  background: #FEF2F2;
+  color: #BA1A1A;
+  border-color: rgba(186, 26, 26, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar__menu-btn { display: flex; }
+  .navbar__user-info { display: none; }
+}
